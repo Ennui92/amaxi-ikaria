@@ -7,7 +7,7 @@
 <meta name="description" content="Σύγκριση αυτοκινήτων για καθημερινή χρήση στην Ικαρία: φίλτρα ανά μάρκα, υβριδικό, τετρακίνηση και ύψος από το έδαφος.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;700;900&family=Commissioner:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700;900&family=Commissioner:wght@300;400;500;600;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f5f2ec;
@@ -23,6 +23,7 @@
   --red-soft:#f8e6e1;
   --green:#1a844f;
   --shadow:0 1px 2px rgba(20,33,31,.06),0 6px 20px rgba(20,33,31,.06);
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -30,7 +31,7 @@ html{scroll-behavior:smooth}
 body{
   margin:0;background:var(--bg);color:var(--ink);
   font-family:"Commissioner",system-ui,-apple-system,sans-serif;
-  font-weight:400;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  font-weight:300;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;
 }
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 h1,h2,h3{font-family:"Alegreya",Georgia,serif;letter-spacing:-.01em}
@@ -38,7 +39,7 @@ a{color:var(--teal)}
 
 /* ---------- header ---------- */
 header{padding:44px 0 26px;background:linear-gradient(180deg,#ffffff,#f5f2ec);border-bottom:1px solid var(--line)}
-.eyebrow{font-size:14px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin:0 0 12px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin:0 0 14px}
 h1{font-weight:900;font-size:clamp(2rem,5.4vw,3.2rem);line-height:1.02;margin:0 0 14px}
 .lede{max-width:60ch;font-size:1.06rem;color:#40514c;margin:0}
 
@@ -54,7 +55,7 @@ h1{font-weight:900;font-size:clamp(2rem,5.4vw,3.2rem);line-height:1.02;margin:0 
 .controls{position:sticky;top:0;z-index:30;background:rgba(245,242,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:14px 0;margin-top:30px}
 .controls .wrap{display:flex;flex-direction:column;gap:12px}
 .ctl-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.ctl-label{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:4px;flex:0 0 auto}
+.ctl-label{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:4px;flex:0 0 auto}
 .chip{
   font-family:inherit;font-size:15px;font-weight:600;color:var(--ink);
   background:var(--surface);border:1.5px solid var(--line);border-radius:999px;
@@ -65,7 +66,7 @@ h1{font-weight:900;font-size:clamp(2rem,5.4vw,3.2rem);line-height:1.02;margin:0 
 .chip .bx{width:18px;height:18px;border:1.5px solid currentColor;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;line-height:1}
 .chip[aria-pressed="true"] .bx{background:#fff;color:var(--teal)}
 select{font-family:inherit;font-size:15px;font-weight:600;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);min-height:42px;cursor:pointer}
-.count{font-size:15px;color:var(--muted);font-weight:600}
+.count{font-family:var(--mono);font-size:13px;color:var(--muted);font-weight:400}
 .clear{background:none;border:none;color:var(--red);font-weight:600;font-size:15px;cursor:pointer;text-decoration:underline;padding:6px}
 
 /* ---------- cards ---------- */
@@ -75,16 +76,16 @@ main{padding:26px 0 10px}
 .card.over{opacity:.85}
 .photo{position:relative;aspect-ratio:16/10;background:#eceae4;overflow:hidden}
 .photo img{width:100%;height:100%;object-fit:cover;display:block}
-.badge{position:absolute;top:12px;left:12px;font-size:13px;font-weight:700;padding:6px 11px;border-radius:999px;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.badge{position:absolute;top:12px;left:12px;font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.02em;padding:6px 11px;border-radius:999px;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2)}
 .badge.good{background:var(--teal)}
 .badge.ok{background:#3a7a5f}
 .badge.warn{background:var(--amber)}
 .ribbon{position:absolute;top:12px;right:12px;background:var(--red);color:#fff;font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px}
 .card-body{padding:18px 18px 16px;display:flex;flex-direction:column;flex:1}
-.brandtag{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.brandtag{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .card h3{font-size:1.28rem;margin:2px 0 6px;line-height:1.15}
-.price{font-size:1.5rem;font-weight:800;color:var(--teal);margin:0}
-.price .conf{font-size:12px;font-weight:600;color:var(--muted);vertical-align:middle;margin-left:6px}
+.price{font-family:var(--mono);font-size:1.4rem;font-weight:600;color:var(--teal);margin:0}
+.price .conf{font-size:11px;font-weight:400;color:var(--muted);vertical-align:middle;margin-left:6px}
 .why{font-size:.95rem;color:#40514c;margin:8px 0 14px;font-style:italic}
 
 /* spec rows */
@@ -99,7 +100,7 @@ main{padding:26px 0 10px}
 /* clearance mini */
 .cl{margin:6px 0 14px}
 .cl-top{display:flex;justify-content:space-between;font-size:14px;margin-bottom:5px}
-.cl-top b{font-weight:800}
+.cl-top b{font-family:var(--mono);font-weight:600}
 .cl-track{height:12px;background:#efece5;border-radius:999px;overflow:hidden;position:relative}
 .cl-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#0b5f5a,#159b8f)}
 .cl-fill.mid{background:linear-gradient(90deg,#b5790a,#e0b13f)}
@@ -116,7 +117,7 @@ details.more[open]>summary::before{content:"－"}
 .cons h4{color:var(--red)}
 .pc ul{margin:0;padding-left:20px}
 .pc li{font-size:14.5px;margin-bottom:5px;line-height:1.45}
-.mini{font-size:11px;font-weight:700;padding:1px 6px;border-radius:5px;white-space:nowrap;vertical-align:1px}
+.mini{font-family:var(--mono);font-size:10.5px;font-weight:600;padding:2px 6px;border-radius:5px;white-space:nowrap;vertical-align:1px}
 .mini.c{background:var(--teal-soft);color:var(--teal)}
 .mini.l{background:var(--amber-soft);color:var(--amber)}
 .mini.g{background:var(--red-soft);color:var(--red)}
@@ -144,19 +145,19 @@ section.block{padding:44px 0}
 .bar-fill{position:absolute;left:0;top:0;bottom:0;border-radius:8px;background:linear-gradient(90deg,#0b5f5a,#159b8f)}
 .bar-fill.mid{background:linear-gradient(90deg,#b5790a,#e0b13f)}
 .bar-fill.low{background:linear-gradient(90deg,#a33a26,#d06a52)}
-.bar-val{flex:0 0 74px;text-align:right;font-weight:700;font-size:14.5px}
+.bar-val{flex:0 0 74px;text-align:right;font-family:var(--mono);font-weight:600;font-size:13.5px}
 .guideline{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--red);opacity:.55}
 
 /* table */
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface);box-shadow:var(--shadow)}
 table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px}
 th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
-thead th{position:sticky;top:0;background:#f0ede6;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:700}
+thead th{position:sticky;top:0;background:#f0ede6;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
 tbody tr:hover{background:#faf9f6}
 td .tm{width:56px;height:38px;object-fit:cover;border-radius:6px;display:block}
 .tk{font-weight:700;color:var(--green)}
 .tx{color:#b5b0a6;font-weight:700}
-.tprice{font-weight:800;color:var(--teal)}
+.tprice{font-family:var(--mono);font-weight:600;color:var(--teal)}
 .trow-over td{background:#faf6ef}
 
 /* context / citroen */
@@ -185,7 +186,7 @@ footer h2{color:var(--ink);font-size:1.4rem;margin:0 0 14px}
 
     <div class="quick">
       <h2>Η γρήγορη απάντηση</h2>
-      <p>Αν μετράει η σιγουριά στον δρόμο: <b>Suzuki Vitara 4×4</b> (αληθινή τετρακίνηση, αυτόματο, μέσα στον προϋπολογισμό) ή <b>Toyota Yaris Cross AWD</b> (η πιο αξιόπιστη, σέρβις παντού).</p>
+      <p>Αν προτεραιότητα είναι <b>να μη θέλει συχνά συνεργείο</b>: <b>Toyota Yaris Cross AWD-i</b> — αξιοπιστία Toyota, υβριδικά φρένα, τετρακίνηση με ηλεκτρικό μοτέρ (ελάχιστη επιπλέον μηχανική φθορά), σέρβις παντού. Αν προτεραιότητα είναι η <b>μέγιστη πρόσφυση</b> στην ανηφόρα: <b>Suzuki Vitara AllGrip 4×4</b> — αληθινό, δοκιμασμένο 4×4, μέσα στον προϋπολογισμό.</p>
       <p class="cit">Αν σου αρέσει η Citroën: η πιο λογική επιλογή εδώ είναι το <b class="cit">C3 Aircross Hybrid</b> — ψηλό, άνετο, αυτόματο. Μόνο να ξέρεις: δεν έχει τετρακίνηση και θέλει λίγο πιο συχνό σέρβις σε κακό δρόμο.</p>
       <p style="font-size:.95rem;color:#5c6b66">Χρησιμοποίησε τα φίλτρα πιο κάτω για να δεις μόνο ό,τι σε ενδιαφέρει.</p>
     </div>
@@ -195,13 +196,13 @@ footer h2{color:var(--ink);font-size:1.4rem;margin:0 0 14px}
 <section class="why-sec">
   <div class="wrap">
     <h2 class="sec-title">Τι έχει ο δρόμος προς τον Μαγγανίτη — και γιατί μετράει</h2>
-    <p class="sec-sub">Δεν έχει χιόνι, οπότε δεν μιλάμε για πάγο. Το θέμα είναι άλλο: <b>απότομες ανηφόρες, χαλίκι, φαγωμένη άσφαλτος, βρεγμένο τσιμέντο σε κλίση 15%</b> και <b>μακριές κατηφόρες</b> προς τη θάλασσα που καίνε τα φρένα. Να τι σημαίνει το καθένα για το αμάξι που θα διαλέξεις:</p>
+    <p class="sec-sub">Ο δρόμος έχει <b>απότομες ανηφόρες, χαλίκι, φαγωμένη άσφαλτο, βρεγμένο τσιμέντο σε κλίση 15%</b> και <b>μακριές κατηφόρες</b> προς τη θάλασσα που καίνε τα φρένα. Να τι σημαίνει το καθένα για το αμάξι που θα διαλέξεις:</p>
     <div class="explain">
       <div class="ex"><div class="emo">⚙️</div><h3>Αυτόματο κιβώτιο</h3><p>Σε συνεχείς ανηφόρες και στενά, το αυτόματο σε γλιτώνει από το διαρκές πάτημα συμπλέκτη. <span class="hl">Λιγότερη κούραση και πιο σίγουρο ξεκίνημα σε ανηφόρα.</span> Όλα τα αμάξια εδώ είναι αυτόματα.</p></div>
       <div class="ex"><div class="emo">📏</div><h3>Ύψος από το έδαφος</h3><p>Το χαλίκι, οι λακκούβες και οι απότομες μπασιές «τρώνε» το κάτω μέρος ενός χαμηλού αυτοκινήτου. <span class="hl">Πιο ψηλό αμάξι = δεν ξύνει, λιγότερες ζημιές με τα χρόνια.</span></p></div>
-      <div class="ex"><div class="emo">🛞</div><h3>Πρόσφυση / Τετρακίνηση</h3><p>Σε ανηφόρα 15% με χαλίκι ή βρεγμένο τσιμέντο, ένα προσθιοκίνητο μπορεί να πατινάρει. Δεν είναι θέμα πάγου — είναι <b>κλίση συν ολισθηρή επιφάνεια</b>. <span class="hl">Η τετρακίνηση (4×4) δίνει σιγουριά.</span></p></div>
+      <div class="ex"><div class="emo">🛞</div><h3>Πρόσφυση / Τετρακίνηση</h3><p>Σε ανηφόρα 15% με χαλίκι ή βρεγμένο τσιμέντο (<b>κλίση συν ολισθηρή επιφάνεια</b>) ένα προσθιοκίνητο μπορεί να πατινάρει. <span class="hl">Η τετρακίνηση (4×4) δίνει σιγουριά.</span> Προσοχή: το 4×4 είναι για <b>πρόσφυση, όχι για λιγότερη φθορά</b> — έχει παραπάνω μέρη, άρα λίγο περισσότερη συντήρηση.</p></div>
       <div class="ex"><div class="emo">🛑</div><h3>Φρένα στις κατηφόρες</h3><p>Οι μακριές κατηφόρες προς τη θάλασσα ζεσταίνουν και φθείρουν τα φρένα. <span class="hl">Τα υβριδικά «φρενάρουν με το μοτέρ»</span> και προστατεύουν τα κανονικά φρένα — πιο ασφαλές και φθηνότερο.</p></div>
-      <div class="ex"><div class="emo">🔧</div><h3>Αξιοπιστία &amp; σέρβις</h3><p>Μακριά από μεγάλα συνεργεία, μια βλάβη είναι μπελάς. <span class="hl">Μάρκες με πυκνό δίκτυο (Toyota, Suzuki)</span> και απλή, δοκιμασμένη τεχνολογία σημαίνουν λιγότερο άγχος.</p></div>
+      <div class="ex"><div class="emo">🔧</div><h3>Λιγότερο συνεργείο με τα χρόνια</h3><p>Αυτό που κρατάει ένα αμάξι μακριά από το συνεργείο: <span class="hl">δοκιμασμένη μάρκα (Toyota, Suzuki), απλά συστήματα, ύψος που προστατεύει το κάτω μέρος και υβριδικά φρένα.</span> Η Yaris Cross AWD-i έχει την τετρακίνηση με ξεχωριστό ηλεκτρικό μοτέρ πίσω — σχεδόν καμία επιπλέον μηχανική φθορά.</p></div>
     </div>
   </div>
 </section>
